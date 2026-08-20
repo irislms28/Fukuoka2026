@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福岡 2026 夏日微風旅行手冊</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #FBF9F5;
+            --card-bg: #FFFFFF;
+            --matcha: #8A9A86;
+            --persimmon: #D98A6C;
+            --slate-blue: #6C829B;
+            --sakura: #E8B4B8;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --border-soft: #EFECE6;
+            --shadow-watercolor: 0 10px 25px rgba(138, 154, 134, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Zen Maru Gothic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 90px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* 頂部 Header */
+        header {
+            background: linear-gradient(135deg, #F5EFEB 0%, #E8F0E8 100%);
+            padding: 20px 16px 16px 16px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin-bottom: 12px;
+        }
+
+        header h1 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.4rem;
+            color: #4A5849;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 0.85rem;
+            color: var(--persimmon);
+            font-weight: 500;
+        }
+
+        /* 導航頁籤 */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 4px 10px 12px 10px;
+            gap: 6px;
+        }
+
+        .nav-btn {
+            background-color: #EFECE6;
+            color: var(--text-sub);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 18px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn.active {
+            background-color: var(--matcha);
+            color: #FFFFFF;
+            box-shadow: 0 4px 10px rgba(138, 154, 134, 0.3);
+            font-weight: 700;
+        }
+
+        /* 內容區塊 */
+        .container {
+            padding: 0 15px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 卡片通用樣式 */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-watercolor);
+            border: 1px solid var(--border-soft);
+            position: relative;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #3D4A3C;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px dashed var(--border-soft);
+            padding-bottom: 8px;
+        }
+
+        /* 時間軸與行程條目 */
+        .timeline-item {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 18px;
+            border-left: 2px solid #D2DDD0;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            border-left: 2px solid transparent;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--persimmon);
+            box-shadow: 0 0 0 3px #FBF9F5;
+        }
+
+        .time-badge {
+            font-size: 0.8rem;
+            color: var(--slate-blue);
+            font-weight: 700;
+            background-color: #EEF3F7;
+            padding: 2px 8px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .spot-title {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .spot-jp {
+            font-size: 0.82rem;
+            color: #888888;
+            margin-bottom: 4px;
+        }
+
+        .spot-desc {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        /* 特約計程車提醒區塊 */
+        .taxi-notice-box {
+            background-color: #FFF9F2;
+            border: 1.5px dashed var(--persimmon);
+            border-radius: 14px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+
+        .taxi-notice-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #B55D3C;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .taxi-img-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .taxi-card {
+            background: #FFF;
+            border-radius: 10px;
+            padding: 6px;
+            border: 1px solid #EAE2D8;
+            text-align: center;
+        }
+
+        .taxi-card img {
+            width: 100%;
+            height: 95px;
+            object-fit: contain;
+            background-color: #F9F9F9;
+            border-radius: 6px;
+            margin-bottom: 4px;
+        }
+
+        .taxi-card span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #4A5849;
+            display: block;
+        }
+
+        /* 按鈕樣式 */
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.78rem;
+            padding: 5px 10px;
+            border-radius: 12px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-map {
+            background-color: #EBF3ED;
+            color: #4A6B50;
+        }
+
+        .btn-copy {
+            background-color: #F8EFEA;
+            color: #B55D3C;
+        }
+
+        /* 標籤 */
+        .tag {
+            font-size: 0.72rem;
+            padding: 2px 7px;
+            border-radius: 8px;
+            font-weight: 500;
+            display: inline-block;
+            margin-right: 4px;
+        }
+        .tag-food { background-color: #FDE8E4; color: #C85A48; }
+        .tag-spot { background-color: #E3EFEA; color: #407A65; }
+        .tag-shop { background-color: #E8EEF5; color: #436B95; }
+        .tag-hotel { background-color: #FAF0E6; color: #9E6B30; }
+
+        /* 懸浮工具列 */
+        .floating-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(8px);
+            border-radius: 30px;
+            padding: 8px 24px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border: 1px solid var(--border-soft);
+            z-index: 100;
+        }
+
+        .float-btn {
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .float-btn span {
+            font-size: 1.2rem;
+        }
+
+        /* 彈出視窗 Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            padding: 20px;
+            animation: fadeIn 0.2s ease;
+        }
+
+        .modal-card {
+            background-color: var(--bg-color);
+            width: 100%;
+            max-width: 500px;
+            border-radius: 24px;
+            padding: 22px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            max-height: 88vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .modal-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #3D4A3C;
+        }
+
+        .close-btn {
+            background: #EFECE6;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        /* 大字卡多行顯示容器 */
+        .prompt-display-container {
+            background-color: #FFF;
+            border: 2px solid var(--matcha);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 14px;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .prompt-line-jp {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2D372E;
+            line-height: 1.35;
+            margin-bottom: 10px;
+            border-bottom: 1.5px dashed #E5EADF;
+            padding-bottom: 8px;
+        }
+
+        .prompt-line-en {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--slate-blue);
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .prompt-line-zh {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--persimmon);
+            line-height: 1.3;
+        }
+
+        .phrase-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .phrase-item {
+            padding: 12px;
+            background: #FFF;
+            border-radius: 14px;
+            border: 1px solid var(--border-soft);
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .phrase-item:hover {
+            border-color: var(--matcha);
+            background-color: #F8FAF8;
+        }
+
+        .phrase-item-num {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--matcha);
+            margin-bottom: 2px;
+        }
+
+        .phrase-item-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部標題 -->
+    <header>
+        <h1>福岡 2026 夏日微風旅行手冊</h1>
+        <p>2026.08.26 － 08.30 (5 Days)</p>
+    </header>
+
+    <!-- 頁籤導航 -->
+    <nav>
+        <button class="nav-btn active" onclick="switchTab('hotel')">✈️ 航班住宿</button>
+        <button class="nav-btn" onclick="switchTab('d1')">📅 D1 (08/26)</button>
+        <button class="nav-btn" onclick="switchTab('d2')">📅 D2 (08/27)</button>
+        <button class="nav-btn" onclick="switchTab('d3')">📅 D3 (08/28)</button>
+        <button class="nav-btn" onclick="switchTab('d4')">📅 D4 (08/29)</button>
+        <button class="nav-btn" onclick="switchTab('d5')">📅 D5 (08/30)</button>
+        <button class="nav-btn" onclick="switchTab('shop')">🛍️ 推薦購買</button>
+    </nav>
+
+    <div class="container">
+
+        <!-- ✈️ 航班與住宿 -->
+        <div id="tab-hotel" class="tab-content active">
+            <div class="card">
+                <div class="card-title">✈️ 航班資訊 (HK Express)</div>
+                <div style="margin-bottom: 12px;">
+                    <div style="font-weight: 700; color: var(--matcha);">去程 UO668</div>
+                    <div style="font-size: 0.9rem;">08/26 (三) 10:55 香港 T1 → 15:20 福岡 國際線</div>
+                    <div style="font-size: 0.8rem; color: var(--text-sub);">已預訂餐點：咖哩豬扒飯 x2、清水 x1</div>
+                </div>
+                <div>
+                    <div style="font-weight: 700; color: var(--persimmon);">回程 UO669</div>
+                    <div style="font-size: 0.9rem;">08/30 (日) 16:15 福岡 國際線 → 19:00 香港 T1</div>
+                    <div style="font-size: 0.8rem; color: var(--text-sub);">建議辦理手續時間：13:15 / 最遲 14:15 抵達機場</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🏨 酒店 1（博多 3 晚）</div>
+                <div style="font-weight: 700;">福岡博多站東方酒店</div>
+                <div class="spot-jp">オリエンタルホテル福岡 博多ステーション</div>
+                <div class="spot-desc">
+                    📍 地址：博多駅中央街4-23, 福岡, 日本<br>
+                    📞 電話：+81 92-461-0170<br>
+                    🗓️ 日期：2026/08/26 - 08/29 (入住 3 晚)
+                </div>
+                <div class="btn-group">
+                    <button class="btn-action btn-copy" onclick="copyText('博多駅中央街4-23, 福岡')">📋 複製日文地址</button>
+                    <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=オリエンタルホテル福岡+博多ステーション" target="_blank">🗺️ 地圖導航</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">♨️ 酒店 2（由布院 1 晚）</div>
+                <div style="font-weight: 700;">由布院溫泉 東匠庵</div>
+                <div class="spot-jp">由布院温泉 東匠庵</div>
+                <div class="spot-desc">
+                    📍 地址：由布市湯布院町川南1044-1, 由布, 日本<br>
+                    📞 電話：+81 50-3528-3816<br>
+                    🗓️ 日期：2026/08/29 - 08/30 (入住 1 晚)<br>
+                    🍽️ 晚餐時間：18:45 / 19:45 精緻懷石料理
+                </div>
+                <div class="btn-group">
+                    <button class="btn-action btn-copy" onclick="copyText('由布市湯布院町川南1044-1, 由布')">📋 複製日文地址</button>
+                    <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=由布院温泉+東匠庵" target="_blank">🗺️ 地圖導航</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📅 D1 -->
+        <div id="tab-d1" class="tab-content">
+            <div class="card">
+                <div class="card-title">📅 Day 1 (08/26 三) 香港 → 福岡 → 博多</div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">10:55 - 15:20</span>
+                    <div class="spot-title"><span class="tag tag-spot">航班</span> 香港搭機抵達福岡</div>
+                    <div class="spot-jp">UO668 (HKG → FUK)</div>
+                    <div class="spot-desc">飛行時間約 3 小時 25 分鐘，抵達福岡機場國際線航廈。</div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">15:20 - 16:30</span>
+                    <div class="spot-title"><span class="tag tag-spot">交通</span> 機場過關 & 前往博多站</div>
+                    <div class="spot-desc">
+                        <b>🚍 路線 Route:</b> 西鐵機場巴士 直行便 (Nishitetsu Airport Bus Direct / 西鉄バス 福岡空港〜博多駅・天神 直行バス)<br>
+                        <b>🚉 車站 Station:</b> 福岡機場國際線 6/7號月台 (Fukuoka Airport Int'l Bus Stop 6/7) → 博多站 (Hakata Station / 博多駅)<br>
+                        <b>🧭 方向 Direction:</b> 往博多站・天神 (Bound for Hakata Station / Tenjin)<br>
+                        <b>🎟️ 資訊 Info:</b> 車程約 25min | JPY 400 | Suica/IC卡或車票 | 班次每 15min
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">16:30 - 17:00</span>
+                    <div class="spot-title"><span class="tag tag-hotel">飯店</span> 博多站東方酒店 Check-in</div>
+                    <div class="spot-jp">オリエンタルホテル福岡 博多ステーション</div>
+                    <div class="spot-desc">辦理入住手續</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=オリエンタルホテル福岡+博多ステーション" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">17:00 - 19:00</span>
+                    <div class="spot-title"><span class="tag tag-shop">購物</span> 博多站周邊逛街 & Yodobashi</div>
+                    <div class="spot-jp">ヨドバシカメラ マルチメディア博多</div>
+                    <div class="spot-desc">探索博多車站筑紫口，逛 Yodobashi。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=ヨドバシカメラ+マルチメディア博多" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">19:00 - 20:15</span>
+                    <div class="spot-title"><span class="tag tag-food">晚餐</span> 博多一幸舍 總本店</div>
+                    <div class="spot-jp">博多一幸舎 総本店</div>
+                    <div class="spot-desc">品嚐著名的元祖豚骨泡系拉麵，濃郁湯頭與極細麵條的最佳結合。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=博多一幸舎+総本店" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">20:15 - 21:00</span>
+                    <div class="spot-title"><span class="tag tag-food">咖啡</span> Little Honey 咖啡博多站前店</div>
+                    <div class="spot-jp">リトルハニー博多駅前店</div>
+                    <div class="spot-desc">飯後散步至文青立飲咖啡店，選購咖啡豆。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=リトルハニー博多駅前店" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">21:00 - 21:45</span>
+                    <div class="spot-title"><span class="tag tag-shop">超市</span> Yodobashi 上層超市補給</div>
+                    <div class="spot-jp">ヨドバシ博多 スーパー</div>
+                    <div class="spot-desc">採買新鮮日本水果及零食（營業至 21:00）。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📅 D2 -->
+        <div id="tab-d2" class="tab-content">
+            <div class="card">
+                <div class="card-title">📅 Day 2 (08/27 四) 太空世界・科學館・小倉城散策</div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">09:15 - 10:15</span>
+                    <div class="spot-title"><span class="tag tag-spot">交通</span> 博多站 → 太空世界站</div>
+                    <div class="spot-desc">
+                        <b>🚃 路線 Route:</b> JR 鹿兒島本線 快速 (JR Kagoshima Main Line Rapid / JR 鹿児島本線 快速)<br>
+                        <b>🚉 車站 Station:</b> 博多站 (Hakata Station) → 太空世界站 (Space World Station / スペースワールド駅)<br>
+                        <b>🧭 方向 Direction:</b> 往小倉・門司港方面 (Bound for Kokura / Mojiko)<br>
+                        <b>🎟️ 資訊 Info:</b> 車程約 55min | JPY 1,130
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">10:30 - 13:00</span>
+                    <div class="spot-title"><span class="tag tag-spot">景點</span> 北九州市科學館（超人60週年展）</div>
+                    <div class="spot-jp">北九州市科学館 SPACE LABO</div>
+                    <div class="spot-desc">參觀超人 (Ultraman) 60 週年特別企劃展（門票 1,500円）。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=スペースLABO（北九州市科学館）" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">13:00 - 14:00</span>
+                    <div class="spot-title"><span class="tag tag-food">午餐</span> 極味屋 八幡店（極味や）</div>
+                    <div class="spot-jp">極味や 八幡店</div>
+                    <div class="spot-desc">極致美味的自煎黑毛和牛漢堡排與燒肉。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=極味や+八幡店" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">14:15 - 14:30</span>
+                    <div class="spot-title"><span class="tag tag-spot">交通</span> 太空世界站 → 小倉站</div>
+                    <div class="spot-desc">
+                        <b>🚃 路線 Route:</b> JR 鹿兒島本線 (JR Kagoshima Main Line / JR 鹿児島本線)<br>
+                        <b>🚉 車站 Station:</b> 太空世界站 → 小倉站 (Kokura Station / 小倉駅)<br>
+                        <b>🧭 方向 Direction:</b> 往門司港・下關 (Bound for Mojiko / Shimonoseki)<br>
+                        <b>🎟️ 資訊 Info:</b> 車程約 10-12min | JPY 280
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">14:30 - 17:30</span>
+                    <div class="spot-title"><span class="tag tag-spot">景點</span> 小倉城散步 & 魚町銀天街</div>
+                    <div class="spot-jp">小倉城 / 魚町銀天街</div>
+                    <div class="spot-desc">漫步勝山公園，感受古典天守閣風情，順道逛逛旦過市場與魚町銀天街。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=小倉城" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">18:00 - 19:10</span>
+                    <div class="spot-title"><span class="tag tag-food">晚餐</span> 天婦羅 Fujishima</div>
+                    <div class="spot-jp">天ぷら定食 ふじしま</div>
+                    <div class="spot-desc">小倉在地人推崇的古早味現炸天婦羅老店。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=天ぷら定食+ふじしま" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">19:14 - 20:41</span>
+                    <div class="spot-title"><span class="tag tag-spot">交通</span> 小倉站 → 博多站</div>
+                    <div class="spot-desc">
+                        <b>🚃 路線 Route:</b> JR 鹿兒島本線 區間快速 (JR Kagoshima Main Line Section Rapid / JR 鹿児島本線 区間快速)<br>
+                        <b>🚉 車站 Station:</b> 小倉站 6號月台 (Kokura Station Platform 6) → 博多站 (Hakata Station)<br>
+                        <b>🧭 方向 Direction:</b> 往荒木 (Bound for Araki / 荒木行き)<br>
+                        <b>🎟️ 資訊 Info:</b> 19:14 - 20:41 | 車程 1h 27min | JPY 1,510
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">20:41</span>
+                    <div class="spot-title"><span class="tag tag-hotel">抵達</span> 抵達博多站</div>
+                    <div class="spot-desc">返回博多站，回飯店休息補給。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📅 D3 -->
+        <div id="tab-d3" class="tab-content">
+            <div class="card">
+                <div class="card-title">📅 Day 3 (08/28 五) 藥院咖啡巡禮・天神・博多運河城</div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">10:00 - 12:00</span>
+                    <div class="spot-title"><span class="tag tag-food">咖啡</span> Coffee County Fukuoka</div>
+                    <div class="spot-jp">Coffee County Fukuoka</div>
+                    <div class="spot-desc">
+                        位於藥院的自烘精品咖啡名店，採購高品質咖啡豆。<br>
+                        <b>🚇 交通 Route:</b> 福岡市地下鐵七隈線 (Nanakuma Line)<br>
+                        博多站 (Hakata Station) → 藥院站 (Yakuin Station) | 往橋本方面 | 車程約 7min (JPY 210)
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=Coffee+County+Fukuoka" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">12:30 - 14:00</span>
+                    <div class="spot-title"><span class="tag tag-spot">景點</span> 櫛田神社 & 櫛田茶屋</div>
+                    <div class="spot-jp">櫛田神社 / 櫛田茶屋</div>
+                    <div class="spot-desc">
+                        參拜博多總鎮守，品嚐現烤熱騰騰的「烤麻糬（焼き餅）」。<br>
+                        <b>🚇 交通 Route:</b> 七隈線 藥院站 → 櫛田神社前站 (Kushidajinja-mae Station) | 往博多方面 | 約 3min (JPY 210)
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=櫛田神社" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">14:30 - 16:30</span>
+                    <div class="spot-title"><span class="tag tag-shop">逛街</span> 天神地下街 & 哈妮咖啡</div>
+                    <div class="spot-jp">ハニー珈琲 福岡三越店</div>
+                    <div class="spot-desc">
+                        漫步日系歐風地下街，至三越店享用精品咖啡。<br>
+                        <b>🚇 交通 Route:</b> 七隈線 櫛田神社前站 → 天神南站 (Tenjin-minami Station) | 約 2min
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=ハニー珈琲+福岡三越店" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">17:00 - 19:30</span>
+                    <div class="spot-title"><span class="tag tag-shop">購物</span> 博多運河城 M78 商店</div>
+                    <div class="spot-jp">キャナルシティ博多 M78ウルトラマンSHOP</div>
+                    <div class="spot-desc">水舞表演與超人專賣店尋寶（由天神徒步或搭乘地下鐵回櫛田神社前站步行即達）。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=キャナルシティ博多" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">19:30 - 20:00</span>
+                    <div class="spot-title"><span class="tag tag-spot">交通</span> 博多運河城 → 博多站</div>
+                    <div class="spot-desc">
+                        <b>🚶 方案 A (徒步 Walk):</b> 沿博多站前通直行，步行約 10-15 分鐘。<br>
+                        <b>🚇 方案 B (地下鐵 Subway):</b> 從運河城步行至「櫛田神社前站」搭乘地下鐵七隈線 →「博多站」（1 站 2 分鐘，JPY 210）。<br>
+                        <b>🚌 方案 C (巴士 Bus):</b> 運河城前公車站搭乘西鐵巴士 (Nishitetsu Bus) 往博多站方向（車程約 5-8 分鐘，JPY 150）。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📅 D4 -->
+        <div id="tab-d4" class="tab-content">
+            <div class="card">
+                <div class="card-title">📅 Day 4 (08/29 六) 特急ゆふ３号・由布院・溫泉旅館</div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">12:19 - 14:38</span>
+                    <div class="spot-title"><span class="tag tag-spot">交通</span> 博多站 → 由布院站</div>
+                    <div class="spot-desc">
+                        <b>🚆 路線 Route:</b> JR 觀光特急由布3號 (JR Limited Express Yufu No. 3 / JR 特急ゆふ3号)<br>
+                        <b>🚉 車站 Station:</b> 博多站 (Hakata Station) → 由布院站 (Yufuin Station / 由布院駅)<br>
+                        <b>🧭 方向 Direction:</b> 往大分・別府 (Bound for Oita / Beppu)<br>
+                        <b>🎟️ 資訊 Info:</b> 12:19 - 14:38 | 車程約 2h 19min | 已預訂指定席
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">14:40 - 16:30</span>
+                    <div class="spot-title"><span class="tag tag-spot">景點</span> 由布院湯之坪街道 & 金鱗湖</div>
+                    <div class="spot-jp">湯の坪街道 / 金鱗湖</div>
+                    <div class="spot-desc">逛散策小店、品嚐 B-speak 蛋糕捲，至湖畔欣賞晨霧繚繞美景。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">17:00 之後</span>
+                    <div class="spot-title"><span class="tag tag-hotel">住宿</span> 由布院溫泉 東匠庵 Check-in</div>
+                    <div class="spot-jp">由布院温泉 東匠庵</div>
+                    <div class="spot-desc">
+                        享受私人溫泉池，於 18:45 享用精緻懷石料理晚餐。
+                        
+                        <!-- 計程車提醒卡 -->
+                        <div class="taxi-notice-box">
+                            <div class="taxi-notice-title">⚠️ 計程車搭乘重要提示（需要選擇特定車隊）</div>
+                            <div style="font-size: 0.82rem; color: #555;">
+                                車資由東匠庵支付，**需要選擇 Daiichi Kotsu (第一交通産業) / Minato Taxi (みなとタクシー)**。上車時可開啟提示卡（提示詞 1）展示給司機：
+                            </div>
+                            <div class="taxi-img-grid">
+                                <div class="taxi-card">
+                                    <img src="DaiichiKotsu.png" alt="Daiichi Kotsu 第一交通産業">
+                                    <span>Daiichi Kotsu<br>(第一交通産業)</span>
+                                </div>
+                                <div class="taxi-card">
+                                    <img src="MinatoTaxi.png" alt="Minato Taxi みなとタクシー">
+                                    <span>Minato Taxi<br>(みなとタクシー)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=由布院温泉+東匠庵" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📅 D5 -->
+        <div id="tab-d5" class="tab-content">
+            <div class="card">
+                <div class="card-title">📅 Day 5 (08/30 日) 由布院 → 機場 → 返港</div>
+                
+                <div class="timeline-item">
+                    <span class="time-badge">08:00 - 10:00</span>
+                    <div class="spot-title"><span class="tag tag-food">早餐</span> 旅館日式晨間朝食</div>
+                    <div class="spot-jp">由布院温泉 東匠庵</div>
+                    <div class="spot-desc">享用東匠庵熱騰騰的晨間朝食，欣賞由布岳山景。</div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">10:15 - 11:00</span>
+                    <div class="spot-title"><span class="tag tag-spot">交通</span> 旅館接駁計程車 → 由布院車站</div>
+                    <div class="spot-desc">
+                        <b>🚕 路線 Route:</b> 旅館合作免費計程車 (Hotel Taxi)<br>
+                        <b>🚉 車站 Station:</b> 由布院溫泉 東匠庵 → 由布院車站 (Yufuin Station / 由布院駅)<br>
+                        <b>🎟️ 資訊 Info:</b> 10:15 出發 | 車程約 8min
+                        
+                        <!-- 計程車提醒卡 -->
+                        <div class="taxi-notice-box">
+                            <div class="taxi-notice-title">⚠️ 計程車搭乘重要提示（需要選擇特定車隊）</div>
+                            <div style="font-size: 0.82rem; color: #555;">
+                                車資由東匠庵支付，**需要選擇 Daiichi Kotsu (第一交通産業) / Minato Taxi (みなとタクシー)**。可開啟提示卡（提示詞 2）展示給司機：
+                            </div>
+                            <div class="taxi-img-grid">
+                                <div class="taxi-card">
+                                    <img src="DaiichiKotsu.png" alt="Daiichi Kotsu 第一交通産業">
+                                    <span>Daiichi Kotsu<br>(第一交通産業)</span>
+                                </div>
+                                <div class="taxi-card">
+                                    <img src="MinatoTaxi.png" alt="Minato Taxi みなとタクシー">
+                                    <span>Minato Taxi<br>(みなとタクシー)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">11:00 - 13:00</span>
+                    <div class="spot-title"><span class="tag tag-spot">交通</span> 由布院車站前 → 福岡機場</div>
+                    <div class="spot-desc">
+                        <b>🚌 路線 Route:</b> 高速巴士 由布院號 (Yufuin-go Highway Bus / 高速バス 由布院号)<br>
+                        <b>🚉 車站 Station:</b> 由布院車站前巴士轉運站 (Yufuin Station Bus Center) → 福岡機場 (Fukuoka Airport)<br>
+                        <b>🧭 方向 Direction:</b> 往福岡機場・博多 (Bound for Fukuoka Airport / Hakata)<br>
+                        <b>🎟️ 資訊 Info:</b> 11:00 - 13:00 | 車程約 2h | 已預訂座位
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">13:15 - 15:30</span>
+                    <div class="spot-title"><span class="tag tag-shop">購物</span> 機場國內線 & 土產小町購物</div>
+                    <div class="spot-jp">福岡空港 国内線ターミナル</div>
+                    <div class="spot-desc">
+                        辦理 Check-in (13:15)，採買最後伴手禮（明太子、小山園甜點、銘菓等）。<br>
+                        <b>🚌 航廈連絡巴士 Route:</b> 機場免費連絡巴士 (Terminal Free Shuttle Bus) | 國內線 ⇄ 國際線 | 車程約 10-15min (免費/毎 5-8min)
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=福岡空港+国内線ターミナル" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">16:15 - 19:00</span>
+                    <div class="spot-title"><span class="tag tag-spot">航班</span> 起飛返港 (UO669)</div>
+                    <div class="spot-desc">16:15 福岡國際線起飛，預計 19:00 抵達香港國際機場 T1。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🛍️ 推薦購買 -->
+        <div id="tab-shop" class="tab-content">
+            <div class="card">
+                <div class="card-title">🛍️ 必買伴手禮與嚴選推薦</div>
+                
+                <div style="margin-bottom: 16px;">
+                    <div style="font-weight: 700; color: var(--persimmon);">1. 島本明太子醬 (博多阪急 B1)</div>
+                    <div class="spot-desc">博多最經典的明太子伴手禮，管狀設計配飯拌麵極佳。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=島本+博多阪急店" target="_blank">🗺️ Google 地圖導航</a>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 16px;">
+                    <div style="font-weight: 700; color: var(--persimmon);">2. The Full Full 爆餡明太子法國麵包 (天神店)</div>
+                    <div class="spot-desc">天神店較易購入，現烤香脆外皮搭配滿滿明太子奶油。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=The+Full+Full+天神" target="_blank">🗺️ Google 地圖導航</a>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 16px;">
+                    <div style="font-weight: 700; color: var(--persimmon);">3. 機場土產小町 (福岡機場國內線)</div>
+                    <div class="spot-desc">福岡限定名品一站式採買（筑紫餅、博多通銘菓等）。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=福岡空港+国内線+デリカショップ" target="_blank">🗺️ Google 地圖導航</a>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 16px;">
+                    <div style="font-weight: 700; color: var(--matcha);">4. 精選咖啡豆名店</div>
+                    <div class="spot-desc" style="margin-bottom: 6px;">
+                        • Coffee County Fukuoka (藥院)<br>
+                        • 豆香洞コーヒースタンド (天神ワンビル店)<br>
+                        • ハニー珈琲 (福岡三越店)<br>
+                        • REC COFFEE (博多マルイ店)
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=Coffee+County+Fukuoka" target="_blank">🗺️ Coffee County</a>
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=豆香洞コーヒー+天神" target="_blank">🗺️ 豆香洞</a>
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=ハニー珈琲+福岡三越店" target="_blank">🗺️ ハニー珈琲</a>
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=REC+COFFEE+博多マルイ店" target="_blank">🗺️ REC COFFEE</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div style="font-weight: 700; color: var(--slate-blue);">5. 外帶美食首選</div>
+                    <div class="spot-desc" style="margin-bottom: 6px;">DACOMECCA 網美生吐司麵包、海風土 (藁焼き炉端 海風土) 稻草燒海鮮。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=DACOMECCA" target="_blank">🗺️ DACOMECCA</a>
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=藁焼き炉端+海風土" target="_blank">🗺️ 海風土</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 懸浮工具列 -->
+    <div class="floating-bar">
+        <button class="float-btn" onclick="openModal('promptModal')">
+            <span>📝</span>
+            超大字日文提示卡
+        </button>
+    </div>
+
+    <!-- 📝 超大字日文提示卡 Modal -->
+    <div id="promptModal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title">📝 超大字日文提示卡</div>
+                <button class="close-btn" onclick="closeModal('promptModal')">✕</button>
+            </div>
+            
+            <!-- 三行顯示區 (日文 / 英文 / 中文) -->
+            <div class="prompt-display-container">
+                <div id="promptLineJp" class="prompt-line-jp">こんにちは、由布院温泉東匠庵へ向かっています。運賃はホテルが支払います。よろしくお願いします、ありがとうございます。</div>
+                <div id="promptLineEn" class="prompt-line-en">Hello, we are heading to Yufuin Onsen Toshoan. The fare will be paid by the hotel. Thank you very much.</div>
+                <div id="promptLineZh" class="prompt-line-zh">你好，我們要前往由布院溫泉東匠庵，車資將會由酒店支付。拜託你了，非常感謝。</div>
+            </div>
+
+            <div style="font-size: 0.8rem; color: #888; margin-bottom: 8px;">👇 點擊切換常用提示項目：</div>
+            
+            <div class="phrase-list">
+                <div class="phrase-item" onclick="updatePrompt(0)">
+                    <div class="phrase-item-num">項目 1（前往東匠庵）</div>
+                    <div class="phrase-item-title">你好，我們要前往由布院溫泉東匠庵，車資將會由酒店支付。拜託你了，非常感謝。</div>
+                </div>
+
+                <div class="phrase-item" onclick="updatePrompt(1)">
+                    <div class="phrase-item-num">項目 2（前往巴士總站）</div>
+                    <div class="phrase-item-title">你好，我們要前往由布院巴士總站，車資將會由酒店支付。拜託你了，非常感謝。</div>
+                </div>
+
+                <div class="phrase-item" onclick="updatePrompt(2)">
+                    <div class="phrase-item-num">項目 3（拍照）</div>
+                    <div class="phrase-item-title">写真を撮ってもらえますか？ (可以幫我們拍照嗎？)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 邏輯 -->
+    <script>
+        // 提示卡資料集 (日文 / 英文 / 中文)
+        const promptsData = [
+            {
+                jp: "こんにちは、由布院温泉東匠庵へ向かっています。運賃はホテルが支払います。よろしくお願いします、ありがとうございます。",
+                en: "Hello, we are heading to Yufuin Onsen Toshoan. The fare will be paid by the hotel. Thank you very much.",
+                zh: "你好，我們要前往由布院溫泉東匠庵，車資將會由酒店支付。拜託你了，非常感謝。"
+            },
+            {
+                jp: "こんにちは、由布院バスセンターへ向かっています。運賃はホテルが支払います。よろしくお願いします、ありがとうございます。",
+                en: "Hello, we are heading to Yufuin Bus Center. The fare will be paid by the hotel. Thank you very much.",
+                zh: "你好，我們要前往由布院巴士總站，車資將會由酒店支付。拜託你了，非常感謝。"
+            },
+            {
+                jp: "写真を撮ってもらえますか？",
+                en: "Could you take a picture for us?",
+                zh: "可以幫我們拍照嗎？"
+            }
+        ];
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById('tab-' + tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('已成功複製地址：' + text);
+            }).catch(() => {
+                alert('複製失敗，請手動複製');
+            });
+        }
+
+        function updatePrompt(index) {
+            const data = promptsData[index];
+            document.getElementById('promptLineJp').innerText = data.jp;
+            document.getElementById('promptLineEn').innerText = data.en;
+            document.getElementById('promptLineZh').innerText = data.zh;
+        }
+    </script>
+</body>
+</html>
