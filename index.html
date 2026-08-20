@@ -192,6 +192,17 @@
             line-height: 1.5;
         }
 
+        /* 景點/美食圖片樣式（已更新為完整高度不裁切） */
+        .spot-img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 8px 0;
+            border: 1px solid var(--border-soft);
+            display: block;
+            background-color: #F7F5F0;
+        }
+
         /* 特約計程車提醒區塊 */
         .taxi-notice-box {
             background-color: #FFF9F2;
@@ -228,7 +239,7 @@
 
         .taxi-card img {
             width: 100%;
-            height: 95px;
+            height: auto;
             object-fit: contain;
             background-color: #F9F9F9;
             border-radius: 6px;
@@ -555,6 +566,7 @@
                     <span class="time-badge">19:00 - 20:15</span>
                     <div class="spot-title"><span class="tag tag-food">晚餐</span> 博多一幸舍 總本店</div>
                     <div class="spot-jp">博多一幸舎 総本店</div>
+                    <img class="spot-img" src="ikkousha.jpg" alt="博多一幸舍 豚骨拉麵">
                     <div class="spot-desc">品嚐著名的元祖豚骨泡系拉麵，濃郁湯頭與極細麵條的最佳結合。</div>
                     <div class="btn-group">
                         <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=博多一幸舎+総本店" target="_blank">🗺️ 地圖導航</a>
@@ -565,6 +577,7 @@
                     <span class="time-badge">20:15 - 21:00</span>
                     <div class="spot-title"><span class="tag tag-food">咖啡</span> Little Honey 咖啡博多站前店</div>
                     <div class="spot-jp">リトルハニー博多駅前店</div>
+                    <img class="spot-img" src="little_honey.jpg" alt="Little Honey 咖啡">
                     <div class="spot-desc">飯後散步至文青立飲咖啡店，選購咖啡豆。</div>
                     <div class="btn-group">
                         <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=リトルハニー博多駅前店" target="_blank">🗺️ 地圖導航</a>
@@ -610,6 +623,7 @@
                     <span class="time-badge">13:00 - 14:00</span>
                     <div class="spot-title"><span class="tag tag-food">午餐</span> 極味屋 八幡店（極味や）</div>
                     <div class="spot-jp">極味や 八幡店</div>
+                    <img class="spot-img" src="kiwamiya.jpg" alt="極味屋 和牛漢堡排">
                     <div class="spot-desc">極致美味的自煎黑毛和牛漢堡排與燒肉。</div>
                     <div class="btn-group">
                         <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=極味や+八幡店" target="_blank">🗺️ 地圖導航</a>
@@ -641,6 +655,7 @@
                     <span class="time-badge">18:00 - 19:10</span>
                     <div class="spot-title"><span class="tag tag-food">晚餐</span> 天婦羅 Fujishima</div>
                     <div class="spot-jp">天ぷら定食 ふじしま</div>
+                    <img class="spot-img" src="fujishima.jpg" alt="天婦羅 Fujishima">
                     <div class="spot-desc">小倉在地人推崇的古早味現炸天婦羅老店。</div>
                     <div class="btn-group">
                         <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=天ぷら定食+ふじしま" target="_blank">🗺️ 地圖導航</a>
@@ -675,6 +690,7 @@
                     <span class="time-badge">10:00 - 12:00</span>
                     <div class="spot-title"><span class="tag tag-food">咖啡</span> Coffee County Fukuoka</div>
                     <div class="spot-jp">Coffee County Fukuoka</div>
+                    <img class="spot-img" src="coffee_county.jpg" alt="Coffee County 精品咖啡">
                     <div class="spot-desc">
                         位於藥院的自烘精品咖啡名店，採購高品質咖啡豆。<br>
                         <b>🚇 交通 Route:</b> 福岡市地下鐵七隈線 (Nanakuma Line)<br>
@@ -687,8 +703,9 @@
 
                 <div class="timeline-item">
                     <span class="time-badge">12:30 - 14:00</span>
-                    <div class="spot-title"><span class="tag tag-spot">景點</span> 櫛田神社 & 櫛田茶屋</div>
+                    <div class="spot-title"><span class="tag tag-food">小吃</span> 櫛田神社 & 櫛田茶屋</div>
                     <div class="spot-jp">櫛田神社 / 櫛田茶屋</div>
+                    <img class="spot-img" src="kushida_mochi.jpg" alt="櫛田茶屋 烤麻糬">
                     <div class="spot-desc">
                         參拜博多總鎮守，品嚐現烤熱騰騰的「烤麻糬（焼き餅）」。<br>
                         <b>🚇 交通 Route:</b> 七隈線 藥院站 → 櫛田神社前站 (Kushidajinja-mae Station) | 往博多方面 | 約 3min (JPY 210)
@@ -700,8 +717,9 @@
 
                 <div class="timeline-item">
                     <span class="time-badge">14:30 - 16:30</span>
-                    <div class="spot-title"><span class="tag tag-shop">逛街</span> 天神地下街 & 哈妮咖啡</div>
+                    <div class="spot-title"><span class="tag tag-food">咖啡</span> 天神地下街 & 哈妮咖啡</div>
                     <div class="spot-jp">ハニー珈琲 福岡三越店</div>
+                    <img class="spot-img" src="honey_coffee.jpg" alt="哈妮咖啡">
                     <div class="spot-desc">
                         漫步日系歐風地下街，至三越店享用精品咖啡。<br>
                         <b>🚇 交通 Route:</b> 七隈線 櫛田神社前站 → 天神南站 (Tenjin-minami Station) | 約 2min
@@ -750,21 +768,11 @@
                 </div>
 
                 <div class="timeline-item">
-                    <span class="time-badge">14:40 - 16:30</span>
-                    <div class="spot-title"><span class="tag tag-spot">景點</span> 由布院湯之坪街道 & 金鱗湖</div>
-                    <div class="spot-jp">湯の坪街道 / 金鱗湖</div>
-                    <div class="spot-desc">逛散策小店、品嚐 B-speak 蛋糕捲，至湖畔欣賞晨霧繚繞美景。</div>
-                    <div class="btn-group">
-                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank">🗺️ 地圖導航</a>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="time-badge">17:00 之後</span>
-                    <div class="spot-title"><span class="tag tag-hotel">住宿</span> 由布院溫泉 東匠庵 Check-in</div>
+                    <span class="time-badge">14:40 - 15:30</span>
+                    <div class="spot-title"><span class="tag tag-hotel">飯店</span> 由布院溫泉 東匠庵 Check-in / 寄存行李</div>
                     <div class="spot-jp">由布院温泉 東匠庵</div>
                     <div class="spot-desc">
-                        享受私人溫泉池，於 18:45 享用精緻懷石料理晚餐。
+                        抵達由布院站後，搭乘特約計程車先前往旅館辦理 Check-in 並寄存行李。
                         
                         <!-- 計程車提醒卡 -->
                         <div class="taxi-notice-box">
@@ -788,6 +796,30 @@
                         <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=由布院温泉+東匠庵" target="_blank">🗺️ 地圖導航</a>
                     </div>
                 </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">15:30 - 18:00</span>
+                    <div class="spot-title"><span class="tag tag-spot">景點</span> 由布院湯之坪街道 & 金鱗湖散策</div>
+                    <div class="spot-jp">湯の坪街道 / 金鱗湖</div>
+                    <img class="spot-img" src="bspeak.jpg" alt="B-speak 蛋糕捲與湯之坪美食">
+                    <div class="spot-desc">放下行李後輕鬆逛散策小店、品嚐 B-speak 蛋糕捲，一路漫步至湖畔欣賞金鱗湖美景。</div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=金鱗湖" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time-badge">18:00 之後</span>
+                    <div class="spot-title"><span class="tag tag-food">晚餐</span> 返回東匠庵享用晚餐 & 泡湯</div>
+                    <div class="spot-jp">由布院温泉 東匠庵</div>
+                    <img class="spot-img" src="toshoan_dinner.jpg" alt="東匠庵 懷石料理晚餐">
+                    <div class="spot-desc">
+                        返回旅館休息，於 18:45 享用精緻懷石料理晚餐，餐後享受私人溫泉池放鬆身心。
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=由布院温泉+東匠庵" target="_blank">🗺️ 地圖導航</a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -800,6 +832,7 @@
                     <span class="time-badge">08:00 - 10:00</span>
                     <div class="spot-title"><span class="tag tag-food">早餐</span> 旅館日式晨間朝食</div>
                     <div class="spot-jp">由布院温泉 東匠庵</div>
+                    <img class="spot-img" src="toshoan_breakfast.jpg" alt="東匠庵 日式朝食">
                     <div class="spot-desc">享用東匠庵熱騰騰的晨間朝食，欣賞由布岳山景。</div>
                 </div>
 
@@ -863,63 +896,65 @@
             </div>
         </div>
 
-        <!-- 🛍️ 推薦購買 -->
-        <div id="tab-shop" class="tab-content">
-            <div class="card">
-                <div class="card-title">🛍️ 必買伴手禮與嚴選推薦</div>
-                
-                <div style="margin-bottom: 16px;">
-                    <div style="font-weight: 700; color: var(--persimmon);">1. 島本明太子醬 (博多阪急 B1)</div>
-                    <div class="spot-desc">博多最經典的明太子伴手禮，管狀設計配飯拌麵極佳。</div>
-                    <div class="btn-group">
-                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=島本+博多阪急店" target="_blank">🗺️ Google 地圖導航</a>
-                    </div>
-                </div>
+<!-- 🛍️ 推薦購買 -->
+<div id="tab-shop" class="tab-content">
+    <div class="card">
+        <div class="card-title">🛍️ 必買伴手禮與特產</div>
+        
+        <div style="margin-bottom: 16px;">
+            <div style="font-weight: 700; color: var(--persimmon);">1. 島本明太子醬 (博多阪急 B1)</div>
+            <div class="spot-desc">
+                博多最經典的明太子伴手禮，管狀設計配飯拌麵極佳。<br>
+                <span style="color: #d9534f; font-weight: 700;">⚠️ 注意：此款明太子醬需要冷藏保存！</span>
+            </div>
+            <div class="btn-group">
+                <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=島本+博多阪急店" target="_blank">🗺️ Google 地圖導航</a>
+            </div>
+        </div>
 
-                <div style="margin-bottom: 16px;">
-                    <div style="font-weight: 700; color: var(--persimmon);">2. The Full Full 爆餡明太子法國麵包 (天神店)</div>
-                    <div class="spot-desc">天神店較易購入，現烤香脆外皮搭配滿滿明太子奶油。</div>
-                    <div class="btn-group">
-                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=The+Full+Full+天神" target="_blank">🗺️ Google 地圖導航</a>
-                    </div>
-                </div>
+        <div style="margin-bottom: 16px;">
+            <div style="font-weight: 700; color: var(--persimmon);">2. The Full Full 爆餡明太子法國麵包 (天神店)</div>
+            <div class="spot-desc">天神店較易購入，現烤香脆外皮搭配滿滿明太子奶油。</div>
+            <div class="btn-group">
+                <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=The+Full+Full+天神" target="_blank">🗺️ Google 地圖導航</a>
+            </div>
+        </div>
 
-                <div style="margin-bottom: 16px;">
-                    <div style="font-weight: 700; color: var(--persimmon);">3. 機場土產小町 (福岡機場國內線)</div>
-                    <div class="spot-desc">福岡限定名品一站式採買（筑紫餅、博多通銘菓等）。</div>
-                    <div class="btn-group">
-                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=福岡空港+国内線+デリカショップ" target="_blank">🗺️ Google 地圖導航</a>
-                    </div>
-                </div>
+        <div style="margin-bottom: 16px;">
+            <div style="font-weight: 700; color: var(--persimmon);">3. 機場土產小町 (福岡機場國內線)</div>
+            <div class="spot-desc">福岡限定名品一站式採買（筑紫餅、博多通銘菓等）。</div>
+            <div class="btn-group">
+                <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=福岡空港+国内線+デリカショップ" target="_blank">🗺️ Google 地圖導航</a>
+            </div>
+        </div>
 
-                <div style="margin-bottom: 16px;">
-                    <div style="font-weight: 700; color: var(--matcha);">4. 精選咖啡豆名店</div>
-                    <div class="spot-desc" style="margin-bottom: 6px;">
-                        • Coffee County Fukuoka (藥院)<br>
-                        • 豆香洞コーヒースタンド (天神ワンビル店)<br>
-                        • ハニー珈琲 (福岡三越店)<br>
-                        • REC COFFEE (博多マルイ店)
-                    </div>
-                    <div class="btn-group">
-                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=Coffee+County+Fukuoka" target="_blank">🗺️ Coffee County</a>
-                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=豆香洞コーヒー+天神" target="_blank">🗺️ 豆香洞</a>
-                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=ハニー珈琲+福岡三越店" target="_blank">🗺️ ハニー珈琲</a>
-                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=REC+COFFEE+博多マルイ店" target="_blank">🗺️ REC COFFEE</a>
-                    </div>
-                </div>
+        <div style="margin-bottom: 16px;">
+            <div style="font-weight: 700; color: var(--matcha);">4. 精選咖啡豆名店</div>
+            <div class="spot-desc" style="margin-bottom: 6px;">
+                • Coffee County Fukuoka (藥院)<br>
+                • 豆香洞コーヒースタンド (天神ワンビル店)<br>
+                • ハニー珈琲 (福岡三越店)<br>
+                • REC COFFEE (博多マルイ店)
+            </div>
+            <div class="btn-group">
+                <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=Coffee+County+Fukuoka" target="_blank">🗺️ Coffee County</a>
+                <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=豆香洞コーヒー+天神" target="_blank">🗺️ 豆香洞</a>
+                <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=ハニー珈琲+福岡三越店" target="_blank">🗺️ ハニー珈琲</a>
+                <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=REC+COFFEE+博多マルイ店" target="_blank">🗺️ REC COFFEE</a>
+            </div>
+        </div>
 
-                <div>
-                    <div style="font-weight: 700; color: var(--slate-blue);">5. 外帶美食首選</div>
-                    <div class="spot-desc" style="margin-bottom: 6px;">DACOMECCA 網美生吐司麵包、海風土 (藁焼き炉端 海風土) 稻草燒海鮮。</div>
-                    <div class="btn-group">
-                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=DACOMECCA" target="_blank">🗺️ DACOMECCA</a>
-                        <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=藁焼き炉端+海風土" target="_blank">🗺️ 海風土</a>
-                    </div>
-                </div>
+        <div>
+            <div style="font-weight: 700; color: var(--slate-blue);">5. 外帶美食首選</div>
+            <div class="spot-desc" style="margin-bottom: 6px;">DACOMECCA 網美生吐司麵包、海風土 (藁焼き炉端 海風土) 稻草燒海鮮。</div>
+            <div class="btn-group">
+                <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=DACOMECCA" target="_blank">🗺️ DACOMECCA</a>
+                <a class="btn-action btn-map" href="https://www.google.com/maps/search/?api=1&query=藁焼き炉端+海風土" target="_blank">🗺️ 海風土</a>
             </div>
         </div>
 
     </div>
+</div>
 
     <!-- 懸浮工具列 -->
     <div class="floating-bar">
